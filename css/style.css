@@ -755,8 +755,19 @@
   .reviews {
     min-height: 840px;
     margin-bottom: 85px;
+    position: relative;
+  }
+  .reviews::before {
+    content: "";
+    position: absolute;
+    width: 93.48%;
+    height: 100%;
+    background: linear-gradient(97.92deg, #1F3050 0%, #14326B 100%);
+    z-index: -1;
+    border-radius: 0 30px 30px 0;
   }
   .reviews__wrapper {
+    background: transparent;
     display: block;
   }
   .reviews__text-wrapper {
@@ -984,6 +995,7 @@
   width: 150px;
   max-width: 180px;
   padding: 0 15px;
+  cursor: pointer;
 }
 .reviewers .slider__indicators li {
   box-shadow: none;
