@@ -15,38 +15,17 @@
 
 @import './global/uikit.scss';
 
-// Page blocks
+// Header
+@import './blocks/Исправления блоков с сайта/header.scss';
 
-@import './blocks/promo.scss';
+// Стили для блога(в том числе исправления цвета ссылок)
 
-@import './blocks/advantages.scss';
+@import './blocks/Исправления блоков с сайта/post.scss';
 
-@import './blocks/side-nav.scss';
+// стили для плашки топ услуг
 
-@import './blocks/additional-services.scss';
+@import './blocks/top-service-announcing.scss';
 
-@import './blocks/cases.scss';
+// стили для изображения и её модалки
 
-@import './blocks/reviews.scss';
-
-@import './blocks/completed-works.scss';
-
-@import './blocks/reviewers.scss';
-
-@import './blocks/consulting.scss';
-
-@import './blocks/service-scheme.scss';
-
-@import './blocks/features.scss';
-
-@import './blocks/specialists.scss';
-
-@import './blocks/example-forms.scss';
-
-@import './blocks/packages.scss';
-
-@import './blocks/top-services.scss';
-
-@import './blocks/feedback-form.scss';
-
-@import './blocks/modal-preview.scss';
+@import './blocks/image.scss';

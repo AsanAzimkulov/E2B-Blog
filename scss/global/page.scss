@@ -1,7 +1,11 @@
 .page{
-  overflow-x: hidden;
+  // overflow-x: hidden;
   &__body{
     overflow-x: hidden;
+    &>section:not(.breadcrumbs){
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
   }
 }
 
@@ -9,10 +13,4 @@
 .footer {
   background: $gr-dark-blue;
 }
-}
-
-.video {
-  .slider__wrapper{
-    overflow: hidden;
-  }
 }

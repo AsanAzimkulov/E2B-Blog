@@ -326,11 +326,11 @@
   border-radius: 40px;
 
   &:hover{
-    outline: 1px solid #1C89D1;
+    outline: 1px solid rgba(#1C89D1, 0.4);
     outline-offset: -1px;
   }
   &:active{
-    outline: 2px solid rgba(#1C89D1, 0.4);
+    outline: 2px solid #1C89D1;
     outline-offset: -2px;
   }
 
@@ -422,4 +422,201 @@
   }
 
 
+}
+
+// Main
+
+@mixin title-main($invert: false){
+  font-family: 'Montserrat';
+  font-style: normal;
+  @if $invert{
+    color: white;
+  } @else {
+    color: $black;
+  }
+  &__title-main{
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px; 
+  }
+  @media(min-width: 375px){
+    &__title-main{
+      font-size: 30px;
+      line-height: 37px;
+    }
+  }
+  @media(min-width: 768px){
+    &__title-main{
+      font-size: 62px;
+      line-height: 76px;
+    }
+  }
+}
+@mixin standart-text-content($invert: false){
+  font-family: 'Montserrat';
+  font-style: normal;
+  @if $invert{
+    color: white;
+  } @else {
+    color: $black;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  p, li{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 130%;
+  }
+  @media(min-width: 375px){
+    &__title{
+      font-size: 22px;
+      line-height: 27px;
+    }
+  }
+  @media(min-width: 768px){
+    &__title{
+      font-size: 32px;
+      line-height: 39px;
+    }
+    p,li{
+      font-size: 16px;
+      line-height: 20.8px;
+    }
+  }  
+  @media(min-width: 1400px){
+    p,li{
+      font-size: 18px;
+      line-height: 23px;
+    }
+  }
+}
+@mixin m_empty-bullet($invert: false){
+  position: relative;
+  padding-left: 20px;
+  &::before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 5px;
+    background: none !important;
+    border-radius: 50%;
+    @if $invert {
+      border: 1.5px solid #FFFFFF;
+    } @else {
+      border: 1.5px solid black;
+    }
+
+  }
+  @media(min-width: 768px){
+    padding-left: 35px;
+    &::before{
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      top: 7px;
+      background: none !important;
+      border-radius: 50%;
+      @if $invert {
+        border: 2px solid #FFFFFF;
+      } @else {
+        border: 2px solid black;
+      }
+  
+    }
+  }
+}
+@mixin m_empty-bullet-big($invert: false){
+  position: relative;
+  padding-left: 30px;
+  &::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 2.5px;
+    left: 0px;
+    background: none !important;
+    border-radius: 50%;
+    @if $invert {
+      border: 2px solid #FFFFFF;
+    } @else {
+      border: 2px solid black;
+    }
+
+  }
+  @media(min-width: 768px){
+    padding-left: 30px;
+    &::before{
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 0px;
+      background: none !important;
+      border-radius: 50%;
+      @if $invert {
+        border: 2px solid #FFFFFF;
+      } @else {
+        border: 2px solid black;
+      }
+  
+    }
+  } 
+}
+@mixin m_card(){
+  background: white;
+  cursor: pointer;
+  &:hover{
+    background: #F9FEFF;
+  }
+  &:active{
+    background: #F1FDFF;
+  }
+}
+
+
+// Blog
+
+
+@mixin link-color(){
+  color: $ui-blue;
+  &:hover{
+    color: #FF6871;
+  }
+  &:active{
+    color: $ui-blue-active;
+  }
+}
+
+@mixin bullet-round($color, $empty){
+  > li{
+    list-style: none;
+    padding-left: 18px;
+    position: relative;
+    @media(min-width: 768px){
+      padding-left: 22px;
+    }
+    &::before{
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      top: 6px;
+      @media(min-width: 575px){
+        top: 9px;
+      }
+      @if $empty {
+        outline-offset: -1px;
+        outline: 1px solid $color;
+      } @else {
+        background: $color ;
+      }
+    }
+  }
 }

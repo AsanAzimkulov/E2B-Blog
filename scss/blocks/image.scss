@@ -1,0 +1,195 @@
+.post__text{
+  .image-with-modal{
+    &__wrapper{
+      position: relative;
+      &:hover{
+        .image-with-modal__hover{
+          display: block !important;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          margin: 0 !important;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.15);
+        }
+    }
+      border-radius: 30px;
+      overflow: hidden;
+      @include ver-m(30px);
+      filter: drop-shadow(-15px 15px 30px rgba(230, 230, 230, 0.2)) drop-shadow(15px -15px 30px rgba(230, 230, 230, 0.2)) drop-shadow(15px 15px 38px rgba(230, 230, 230, 0.9));
+      @media(min-width: 768px){
+        @include ver-m(40px);
+      }
+      @media(min-width: 1400px){
+        @include ver-m(50px);
+      }
+    }
+    margin: 0 !important;
+    width: 100%;
+    // &:hover{
+    //   background-image: url('../../images/hover.svg');
+    // }
+  }
+
+  .image-modal {
+    box-sizing: padding-box;
+    font-family: 'Montserrat';
+    color: $black;
+    z-index: 20;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow-y: scroll;
+    &--show{
+      display: block !important;
+    }
+    &__wrapper{
+      margin-top: 127px;
+      margin-bottom: 88px;
+    }
+    &__close{
+      cursor: pointer;
+      &__wrapper{
+        position: relative;
+      }
+      bottom: -19px;
+      right: -11px;
+      position: absolute;  
+      width: 40px;
+      height: 40px;
+      background-color: white;
+      box-shadow: 0px 15px 38px rgba(0, 0, 0, 0.2);
+      border-radius: 10.3448px;
+      &:before{
+        content: '';
+        width: 25.5px;
+        height: 25.25px;
+        background-image: url('../../images/icons/crosshair.svg');
+        background-size: 25.5px 25.25px;
+        position: absolute;
+        margin-top: 7.44px;
+        margin-left: 7.13px;
+      }
+    }
+
+    @media(min-width: 768px) {
+      &__wrapper{
+        margin-bottom: 151px;
+      }
+      &__close{
+        bottom: -35px;
+        right: -16px;
+        position: absolute;  
+        width: 58px;
+        height: 58px;
+        background-color: white;
+        box-shadow: 0px 15px 38px rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+  
+        &:before{
+          content: '';
+          width: 37px;
+          height: 36.6px;
+          background-image: url('../../images/icons/crosshair.svg');
+          background-size: 37px 36.6px;
+          position: absolute;
+          margin-top: 10.78px;
+          margin-left: 10.33px;
+        }
+      }
+    }
+
+    @media(min-width: 769px){
+      padding: 0px;
+    }
+
+    @media(min-width: 1440px){
+      &__close{
+        bottom: -41px;
+        right: -15px;
+        position: absolute;  
+        width: 58px;
+        height: 58px;
+        background-color: white;
+        box-shadow: 0px 15px 38px rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+  
+        &:before{
+          content: '';
+          width: 37px;
+          height: 36.6px;
+          background-image: url('../../images/icons/crosshair.svg');
+          background-size: 37px 36.6px;
+          position: absolute;
+          margin-top: 10.78px;
+          margin-left: 10.33px;
+        }
+      }
+    }
+
+    @media(min-width: 1920px){
+      &__wrapper{
+        margin-bottom: 455px;
+      }
+    }
+  }
+}
+
+.modal-image-show{
+  .image-modal{
+    display: block !important;
+  }
+}
+
+.double-image-with-modal, .triple-image-with-modal{
+  padding: 0px;
+  @include ver-m(30px, 40px);
+  .image-with-modal__wrapper{
+    margin: 0px;
+  }
+  .image-with-modal--multi__item{
+    @include item-spacing(30px);
+  }
+  .image-with-modal__title{
+    margin-bottom: 0;
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+    font-style: italic;
+  }
+
+  @media(min-width: 768px){
+    @include ver-m(50px); 
+    display: flex;
+    justify-content: space-between;
+    .image-with-modal__title{
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}
+
+.double-image-with-modal{
+  @media(min-width: 768px){
+    .image-with-modal--multi__item{
+      width: 47.88%;
+    }
+  }
+}
+
+.triple-image-with-modal{
+  @media(min-width: 768px){
+    .image-with-modal--multi__item{
+      width: 30.50%;
+    }
+  }
+}
