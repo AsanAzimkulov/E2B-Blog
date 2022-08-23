@@ -141,6 +141,11 @@
       position: sticky;
       top: 0px;
       padding-top: 0px;
+      transition: padding-top 300ms ease-in 0s;
+    }
+    &__inner-wrapper.padding-top-100{
+      padding-top: 100px !important;
+      transition: padding-top 500ms ease-in 0s;
     }
   }
   &__anchor{
@@ -321,9 +326,13 @@
         width: 50px;
         height: 50px;
         top: 0px;
-        right: 0px;
+        right: -17px;
         background-image: url('../../images/icons/blockquote.svg');
+        @media(min-width: 1020px){
+          right: 0px;
+        }
       }
+
 
     }
     &__contact{

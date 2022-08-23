@@ -183,7 +183,6 @@ if ($(window).width() < 993) {
 
 function onOpenCertificateModal(e) {
   const src = e.currentTarget.querySelector('img').getAttribute('src');
-  console.log(src);
   document.querySelector('.certificate-modal__image').setAttribute('src', src);
   $('html').addClass('no-scroll-y');
   document.body.classList.add('modal-certificate-show');
@@ -230,7 +229,16 @@ document.querySelectorAll('.image-modal').forEach(modal => modal.addEventListene
     onCloseImageModal();
   }
 }));
+$(window).scroll(function () {
+  const style = window.getComputedStyle(document.querySelector('header'));
+  let wrapper = $(".post__anchor__sticky__inner-wrapper");
+  if (Number.parseInt(style.getPropertyValue('--body-padding-height')) === 40) {
+    $(wrapper).addClass('padding-top-100');
+  } else {
+    $(wrapper).removeClass('padding-top-100');
+  }
 
+})
 $(document).ready(function () {
   const items = $('.top-service-announcing');
   if (items.length !== 0) {

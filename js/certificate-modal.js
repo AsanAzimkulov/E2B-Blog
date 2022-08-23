@@ -1,6 +1,5 @@
 function onOpenCertificateModal(e) {
   const src = e.currentTarget.querySelector('img').getAttribute('src');
-  console.log(src);
   document.querySelector('.certificate-modal__image').setAttribute('src', src);
   $('html').addClass('no-scroll-y');
   document.body.classList.add('modal-certificate-show');
