@@ -599,7 +599,7 @@
 }
 .top-service-announcing--without-right-planc .top-service-announcing__top-link {
   width: fit-content !important;
-  line-break: anywhere;
+  line-break: normal;
 }
 .top-service-announcing--without-right-planc .top-service-announcing__top-link__wrapper {
   width: 100%;

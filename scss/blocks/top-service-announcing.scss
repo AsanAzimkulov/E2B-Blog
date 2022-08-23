@@ -3,7 +3,7 @@
   &--without-right-planc .top-service-announcing {
     &__top-link{
       width: fit-content !important;
-      line-break: anywhere;
+      line-break: normal;
       &__wrapper{
         width: 100%;
         @media(min-width: 1400px){
