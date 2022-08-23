@@ -181,6 +181,32 @@ if ($(window).width() < 993) {
 
 }
 
+function onOpenCertificateModal(e) {
+  const src = e.currentTarget.querySelector('img').getAttribute('src');
+  console.log(src);
+  document.querySelector('.certificate-modal__image').setAttribute('src', src);
+  $('html').addClass('no-scroll-y');
+  document.body.classList.add('modal-certificate-show');
+  document.body.classList.add('no-scroll-y');
+}
+
+function onCloseCertificateModal() {
+  $('html').removeClass('no-scroll-y');
+  // Убираем предыдущий скролл
+  document.querySelector('.certificate-modal').scrollTo(0, 0);
+  document.body.classList.remove('modal-certificate-show');
+  document.body.classList.remove('no-scroll-y');
+}
+
+document.querySelectorAll('.post__anchor__about__images div').forEach(image => image.addEventListener('click', onOpenCertificateModal));
+
+document.querySelector('.certificate-modal__close').addEventListener('click', onCloseCertificateModal);
+
+document.querySelector('.certificate-modal').addEventListener('click', function (e) {
+  if (e.target === this) {
+    onCloseCertificateModal();
+  }
+});
 function onOpenImageModal() {
   $('html').addClass('no-scroll-y');
   document.body.classList.add('modal-image-show');
@@ -204,6 +230,7 @@ document.querySelectorAll('.image-modal').forEach(modal => modal.addEventListene
     onCloseImageModal();
   }
 }));
+
 $(document).ready(function () {
   const items = $('.top-service-announcing');
   if (items.length !== 0) {

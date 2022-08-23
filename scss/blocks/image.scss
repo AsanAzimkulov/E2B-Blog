@@ -1,6 +1,7 @@
 .post__text{
   .image-with-modal{
     &__wrapper{
+      cursor: pointer;
       position: relative;
       &:hover{
         .image-with-modal__hover{
@@ -32,8 +33,7 @@
     // }
   }
 
-  .image-modal {
-    box-sizing: padding-box;
+  .image-modal, .certificate-modal {
     font-family: 'Montserrat';
     color: $black;
     z-index: 20;
@@ -105,7 +105,9 @@
     }
 
     @media(min-width: 769px){
-      padding: 0px;
+      &__wrapper{
+        padding: 0px ;
+      }
     }
 
     @media(min-width: 1440px){
@@ -138,10 +140,57 @@
       }
     }
   }
+
+  .certificate-modal{
+    &__wrapper{
+      background: white;
+      padding: 36.5px;
+      border-radius: 30px;
+      @media(max-width: 768px){
+        max-width: calc(100vw - 60px);
+        padding: 25.5px;
+      }
+      @media(max-width: 575px){
+        max-width: calc(100vw - 30px);
+      }
+    }
+    @media(max-width: 768px){
+      &__close{
+        bottom: -2px;
+        right: -37px;
+      }
+    }
+    &__image{
+      width: 100%;
+      margin: 0px;
+    }
+    @media(min-width: 768px){
+      &__close{
+        bottom: -6px;
+        right: -52px;
+      }
+      @media(max-width: 768.5px){
+        &__wrapper{
+          max-width: 708px;
+        }
+      }
+    }
+    @media(min-width: 1440px){
+      &__close{
+        bottom: -8px;
+        right: -53px;
+      }
+    }
+  }
 }
 
 .modal-image-show{
   .image-modal{
+    display: block !important;
+  }
+}
+.modal-certificate-show{
+  .certificate-modal{
     display: block !important;
   }
 }
