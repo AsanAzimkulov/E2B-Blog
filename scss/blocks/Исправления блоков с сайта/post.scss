@@ -35,6 +35,7 @@
         list-style-type: none;
         position: relative;
         padding-left: 0px;
+        margin-left: 30px;
         li{
           padding-left: 18px;
         }
@@ -78,6 +79,12 @@
       }
     }
 
+    @media(max-width: 575px){
+      .list-numbered-blue, .list-round-marker{
+        margin-left: 10px;
+      }
+      }
+
     @media(max-width: 767.5px){
     .blockquote-grey, .highlighted-blue-line{
       line-height: 24px;
@@ -107,11 +114,7 @@
       }
 
       @media(min-width: 768px){
-        @include ver-m(50px);
         padding: 30px;
-      }
-      @media(min-width: 1400px){
-        @include ver-m(80px); 
       }
     }
 
@@ -137,22 +140,26 @@
   &__anchor__sticky{
 
     &__inner-wrapper{
+      padding-top: 30px;
       color: $black;
-      position: sticky;
-      top: 0px;
-      padding-top: 0px;
-      transition: padding-top 300ms ease-in 0s;
-    }
-    &__inner-wrapper.padding-top-100{
-      padding-top: 100px !important;
-      transition: padding-top 500ms ease-in 0s;
+      position: relative;
+      &::after{
+        content: '';
+        position: absolute;
+        background: #FAFAFA;
+        border-radius: 30px 0px 0px 30px;
+        height: 100%;
+        width: 200%;
+        left: -30px;
+        top: 0px;
+        z-index: -1;
+      }
     }
   }
   &__anchor{
     ol:first-of-type{
-      margin-bottom: 60px;
-      position: static;
-      top: 0px;
+      margin-top: 50px;
+      position: sticky;
       h2{
         margin-bottom: 20px;
         font-weight: 600;
@@ -165,7 +172,7 @@
       font-weight: 600;
       font-size: 25px;
       line-height: 30px;     
-      margin: 20px;
+      margin: 0px 0px 20px 0px;
     }
     &__form{
       max-width: 315px;
@@ -185,6 +192,12 @@
         &:last-of-type{
           &:focus{
             outline: none;
+          }
+          &:hover{
+            filter: brightness(0.9);
+          }
+          &:active{
+            filter: brightness(0.85);
           }
           margin-bottom: 10px;
           font-weight: 600;

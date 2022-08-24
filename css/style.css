@@ -36,6 +36,11 @@
     background: linear-gradient(97.92deg, #1F3050 0%, #14326B 100%);
   }
 }
+.breadcrumbs {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
 @media (min-width: 992px) {
   .header .header__menu > .menu {
     position: relative;
@@ -220,6 +225,7 @@
   list-style-type: none;
   position: relative;
   padding-left: 0px;
+  margin-left: 30px;
 }
 .post__text .list-numbered-blue li {
   padding-left: 18px;
@@ -267,6 +273,11 @@
     margin-bottom: 10px;
   }
 }
+@media (max-width: 575px) {
+  .post__text .list-numbered-blue, .post__text .list-round-marker {
+    margin-left: 10px;
+  }
+}
 @media (max-width: 767.5px) {
   .post__text .blockquote-grey, .post__text .highlighted-blue-line {
     line-height: 24px;
@@ -302,15 +313,7 @@
 }
 @media (min-width: 768px) {
   .post__text .blockquote-grey {
-    margin-top: 50px;
-    margin-bottom: 50px;
     padding: 30px;
-  }
-}
-@media (min-width: 1400px) {
-  .post__text .blockquote-grey {
-    margin-top: 80px;
-    margin-bottom: 80px;
   }
 }
 .post__text .highlighted-blue-line {
@@ -338,20 +341,24 @@
   }
 }
 .post__anchor__sticky__inner-wrapper {
+  padding-top: 30px;
   color: #2D2D2D;
-  position: sticky;
-  top: 0px;
-  padding-top: 0px;
-  transition: padding-top 300ms ease-in 0s;
+  position: relative;
 }
-.post__anchor__sticky__inner-wrapper.padding-top-100 {
-  padding-top: 100px !important;
-  transition: padding-top 500ms ease-in 0s;
+.post__anchor__sticky__inner-wrapper::after {
+  content: "";
+  position: absolute;
+  background: #FAFAFA;
+  border-radius: 30px 0px 0px 30px;
+  height: 100%;
+  width: 200%;
+  left: -30px;
+  top: 0px;
+  z-index: -1;
 }
 .post__anchor ol:first-of-type {
-  margin-bottom: 60px;
-  position: static;
-  top: 0px;
+  margin-top: 50px;
+  position: sticky;
 }
 .post__anchor ol:first-of-type h2 {
   margin-bottom: 20px;
@@ -364,7 +371,7 @@
   font-weight: 600;
   font-size: 25px;
   line-height: 30px;
-  margin: 20px;
+  margin: 0px 0px 20px 0px;
 }
 .post__anchor__form {
   max-width: 315px;
@@ -398,6 +405,12 @@
 }
 .post__anchor__form input:last-of-type:focus {
   outline: none;
+}
+.post__anchor__form input:last-of-type:hover {
+  filter: brightness(0.9);
+}
+.post__anchor__form input:last-of-type:active {
+  filter: brightness(0.85);
 }
 .post__anchor__form input:focus {
   outline-offset: -2px;
