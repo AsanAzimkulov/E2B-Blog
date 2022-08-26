@@ -357,7 +357,7 @@
   z-index: -1;
 }
 .post__anchor ol:first-of-type {
-  margin-top: 50px;
+  margin-top: 20px;
   position: sticky;
 }
 .post__anchor ol:first-of-type h2 {
